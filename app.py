@@ -28,6 +28,7 @@ def get_product_stock(sku):
 def add_stock(sku):
     data = request.get_json()
     amount = data.get('amount')
+    
     if not isinstance(amount, int) or amount <= 0:
         return jsonify({"message": "Invalid amount"}), 400
 
